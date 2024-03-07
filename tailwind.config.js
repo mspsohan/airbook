@@ -1,3 +1,9 @@
 module.exports = {
-   content: ["./src/**/*.{html, js}"],
+   theme: {
+      extend: {
+         gridTemplateColumns: {
+            '13': 'repeat(13, minmax(0, 1fr))',
+         }
+      }
+   }
 }

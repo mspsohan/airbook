@@ -5,14 +5,17 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SCIC - Primary Task</title>
-	<link rel="stylesheet" href="./style.css">
+	<!-- <link rel="stylesheet" href="./style.css"> -->
 	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css"
+		integrity="sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="">
 	<!-- Header Section -->
 	<header>
-		<div class="bg-white w-full">
+		<div class="bg-white fixed z-30 w-full">
 			<!-- Navigation bar -->
 			<nav class="max-w-[1120px] mx-auto flex justify-between items-center bg-white p-2">
 				<div class="flex items-center gap-2">
@@ -20,13 +23,17 @@
 						<img src="./assets/Logo/LOGO.png" alt="" />
 					</a>
 				</div>
-				<ul class="hidden lg:flex gap-7 text-[18px] font-medium">
+				<button id="toggleButton"
+					class="text-xl font-medium py-2 md:hidden px-5 rounded-md bg-blue-600 hover:bg-blue-800 text-white">
+					<i class="fa-solid fa-bars"></i>
+				</button>
+				<ul class="text-[18px] md:flex md:gap-7 font-medium hidden">
 					<li><a href="#">Blog</a></li>
 					<li><a href="#">Offer</a></li>
 					<li><a href="#">Airlines</a></li>
 					<li><a href="#">Blog</a></li>
 				</ul>
-				<div>
+				<div class="hidden md:block">
 					<button class="text-xl font-medium py-2 px-5 rounded-md bg-blue-600 hover:bg-blue-800 text-white">
 						Login
 					</button>
@@ -40,100 +47,107 @@
 					background-repeat: no-repeat;
 				">
 			<div class="max-w-[1120px] mx-auto">
-				<h3 class="text-[40px] font-semibold">Welcome to <span>AirBook</span></h3>
-				<div class="flex justify-between items-center bg-white rounded-t-md p-14">
-					<div class="flex gap-3 items-center">
-						<div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-							<input id="bordered-checkbox-1" type="checkbox" value="" name="bordered-checkbox"
-								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 rounded-full" />
-							<label for="bordered-checkbox-1"
-								class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">One Way</label>
-						</div>
-						<div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-							<input checked id="bordered-checkbox-2" type="checkbox" value="" name="bordered-checkbox"
-								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-							<label for="bordered-checkbox-2"
-								class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked
-								state</label>
-						</div>
-					</div>
-					<div class="flex gap-3 items-center">
-						<div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-							<input id="bordered-checkbox-1" type="checkbox" value="" name="bordered-checkbox"
-								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-							<label for="bordered-checkbox-1"
-								class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default
-								radio</label>
-						</div>
-						<div class="flex items-center ps-4 border border-gray-200 rounded dark:border-gray-700">
-							<input checked id="bordered-checkbox-2" type="checkbox" value="" name="bordered-checkbox"
-								class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-							<label for="bordered-checkbox-2"
-								class="w-full py-4 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked
-								state</label>
-						</div>
-					</div>
-				</div>
-				<div class="flex items-center gap-5">
-					<div class="grid grid-cols-1 lg:grid-cols-12 gap-3 bg-white rounded-b-md p-14">
-						<div class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-3 overflow-hidden h-16">
-							<p class="text-[14px] font-semibold">DAC</p>
-							<div class="pl-2">
-								<h6 class="text-[14px] font-semibold">Dhaka</h6>
-								<p class="text-[12px]">Hazrat Shahjalal International</p>
+				<h3 class="text-[40px] font-semibold text-white">Welcome to <span class="text-blue-500">AirBook</span></h3>
+				<div class=" p-14 bg-white rounded-md">
+					<div class="flex flex-col lg:flex-row gap-5 w-full justify-between items-center ">
+						<div class="flex gap-3 items-center">
+							<div class="flex items-center px-4 border border-gray-200 rounded-xl dark:border-gray-700">
+								<input id="bordered-checkbox-1" type="checkbox" value="" name="bordered-checkbox"
+									class="w-6 h-6 text-blue-600  border-gray-300 rounded-full" />
+								<label for="bordered-checkbox-1" class="w-full py-3 px-4 ms-2 font-medium text-gray-900">One
+									Way</label>
+							</div>
+							<div class="flex items-center px-4 rounded-xl dark:border-gray-700 bg-blue-400">
+								<input checked id="bordered-checkbox-2" type="checkbox" value="checked" name="bordered-checkbox"
+									class="w-6 h-6 text-white bg-gray-100 border-gray-300 rounded" />
+								<label for="bordered-checkbox-2" class="w-full py-3 px-4 ms-2 font-medium text-white">Round
+									Trip</label>
 							</div>
 						</div>
-						<div class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-3 overflow-hidden h-16">
-							<p class="text-[14px] font-semibold">DAC</p>
-							<div class="pl-2">
-								<h6 class="text-[14px] font-semibold">Dhaka</h6>
-								<p class="text-[12px]">Hazrat Shahjalal International</p>
+						<div class="flex gap-3 items-center">
+							<div class="flex items-center border border-blue-500 rounded-xl ">
+								<select name="" id="" class="px-4 py-3 rounded-xl text-blue-500 font-bold outline-none ">
+									<option value="">1 Traveller</option>
+									<option value="">2 Traveller</option>
+								</select>
 							</div>
-						</div>
-						<div class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-3 overflow-hidden h-16">
-							<p class="text-[14px] font-semibold">DAC</p>
-							<div class="pl-2">
-								<h6 class="text-[14px] font-semibold">Dhaka</h6>
-								<p class="text-[12px]">Hazrat Shahjalal International</p>
-							</div>
-						</div>
-						<div class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-3 overflow-hidden h-16">
-							<p class="text-[14px] font-semibold">DAC</p>
-							<div class="pl-2">
-								<h6 class="text-[14px] font-semibold">Dhaka</h6>
-								<p class="text-[12px]">Hazrat Shahjalal International</p>
+							<div class="flex items-center border border-blue-500 rounded-xl ">
+								<select name="" id="" class="px-4 py-3 rounded-xl text-blue-500 font-bold outline-none ">
+									<option value="">Economy</option>
+									<option value="">Bussiness</option>
+									<option value="">Middle</option>
+								</select>
 							</div>
 						</div>
 					</div>
-					<p>search</p>
+					<!-- Flite Search -->
+					<div class="flex flex-col lg:flex-row items-center gap-5 mt-5">
+						<div class="grid grid-cols-1 lg:grid-cols-9 w-full gap-3 bg-white rounded-b-md">
+							<div
+								class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-9 lg:col-span-2 overflow-hidden h-14">
+								<p class="text-[14px] font-semibold w-7">DAC</p>
+								<div class="pl-2">
+									<h6 class="text-[14px] font-semibold">Dhaka</h6>
+									<p class="text-[12px]">Hazrat Shahjalal International</p>
+								</div>
+							</div>
+							<div
+								class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-9 lg:col-span-2 overflow-hidden h-14">
+								<p class="text-[14px] font-semibold w-7">Cxb</p>
+								<div class="pl-2">
+									<h6 class="text-[14px] font-semibold">Cox’s Bazar</h6>
+									<p class="text-[12px]">Cox’s Bazar international</p>
+								</div>
+							</div>
+							<div
+								class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-9 lg:col-span-2 overflow-hidden h-14">
+								<p class="text-[14px] font-semibold w-7">07</p>
+								<div class="pl-2">
+									<h6 class="text-[14px] font-semibold">March</h6>
+									<p class="text-[12px]">Thursday, 2024</p>
+								</div>
+							</div>
+							<div
+								class="flex items-center border p-2 rounded-md gap-3 divide-x-2 col-span-9 lg:col-span-2 overflow-hidden h-14">
+								<p class="text-[14px] font-semibold w-7">08</p>
+								<div class="pl-2">
+									<h6 class="text-[14px] font-semibold">March</h6>
+									<p class="text-[12px]">Friday, 2024</p>
+								</div>
+							</div>
+							<button class="bg-orange-400 h-14 px-4 rounded-md text-white col-span-9 lg:col-span-1"><i
+									class="fa-solid fa-magnifying-glass text-2xl"></i></button>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 
 	<!-- Featured section -->
-	<section class="max-w-[1120px] mx-auto">
+	<section class="max-w-[1120px] mx-auto p-5 xl:p-0 my-20">
 		<div class="my-5">
 			<h2 class="text-[32px] font-semibold">Featured Destination</h2>
 		</div>
 		<div>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 				<div class="shadow-xl hover:shadow-2xl p-2 rounded-md">
-					<img src="./assets/Thumbnail/thumbnail_1.png" alt="" class="max-w-[360px]">
+					<img src="./assets/Thumbnail/thumbnail_1.png" alt="" class="w-full">
 					<h3 class="text-[18px] font-medium mt-2 mb-5">Stopover Opprotunity in istanbul With Turkis Airlines</h3>
 					<div class="flex justify-center mb-2">
 						<button class="px-10 py-2 bg-orange-400 hover:bg-orange-500  rounded-2xl">View More</button>
 					</div>
 				</div>
 				<div class="shadow-xl hover:shadow-2xl p-2 rounded-md">
-					<img src="./assets/Thumbnail/thumbnail_2.png" alt="" class="max-w-[360px]">
+					<img src="./assets/Thumbnail/thumbnail_2.png" alt="" class="w-full">
 					<h3 class="text-[18px] font-medium mt-2 mb-5">Stopover Opprotunity in istanbul With Turkis Airlines</h3>
 					<div class="flex justify-center mb-2">
 						<button class="px-10 py-2 bg-orange-400 hover:bg-orange-500  rounded-2xl">View More</button>
 					</div>
 				</div>
 				<div class="shadow-xl hover:shadow-2xl p-2 rounded-md">
-					<img src="./assets/Thumbnail/thumbnail_3.png" alt="" class="max-w-[360px]">
+					<img src="./assets/Thumbnail/thumbnail_3.png" alt="" class="w-full">
 					<h3 class="text-[18px] font-medium mt-2 mb-5">Stopover Opprotunity in istanbul With Turkis Airlines</h3>
 					<div class="flex justify-center mb-2">
 						<button class="px-10 py-2 bg-orange-400 hover:bg-orange-500  rounded-2xl">View More</button>
@@ -145,7 +159,7 @@
 
 
 	<!-- Deals and Offers section -->
-	<section class="max-w-[1120px] mx-auto">
+	<section class="max-w-[1120px] mx-auto p-5 xl:p-0 my-20">
 		<div class="my-5">
 			<h2 class="text-[32px] font-semibold">Deals and Offers</h2>
 		</div>
@@ -184,7 +198,7 @@
 
 
 	<!-- Popular Airlines Section -->
-	<section class="max-w-[1120px] mx-auto">
+	<section class="max-w-[1120px] mx-auto p-5 xl:p-0 my-20">
 		<div class="my-5">
 			<h2 class="text-[32px] font-semibold">Popular Airlines</h2>
 		</div>
@@ -279,7 +293,7 @@
 	</section>
 
 	<!-- Testimonial section -->
-	<section class="">
+	<!-- <section class="">
 		<div class="my-5 max-w-[1120px] mx-auto">
 			<h2 class="text-[32px] font-semibold">Testimonials</h2>
 		</div>
@@ -310,7 +324,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 	<!-- <div class="relative" style="height: 283px;">
 		<div class="carousel carousel-center rounded-box">
@@ -338,7 +352,7 @@
 	</div> -->
 
 	<!-- Travel Blog section -->
-	<section class="max-w-[1120px] mx-auto">
+	<section class="max-w-[1120px] mx-auto p-5 xl:p-0 my-10">
 		<div class="my-5">
 			<h2 class="text-[32px] font-semibold">Travel Blog</h2>
 		</div>
@@ -346,7 +360,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 				<!-- 1st card -->
 				<div class="shadow-xl hover:shadow-2xl rounded-md hover:cursor-pointer">
-					<img src="./assets/Thumbnail/thumbnail_4.png" alt="" class="max-w-[360px]">
+					<img src="./assets/Thumbnail/thumbnail_4.png" alt="" class=" w-full">
 					<div class="p-3">
 						<p class="text-yellow-500 mr-6 text-sm">Work and Travel <span class=" text-black">16 septembar
 								23</span>
@@ -365,7 +379,7 @@
 				</div>
 				<!-- 2nd card -->
 				<div class="shadow-xl hover:shadow-2xl rounded-md hover:cursor-pointer">
-					<img src="./assets/Thumbnail/thumbnail_4.png" alt="" class="max-w-[360px]">
+					<img src="./assets/Thumbnail/thumbnail_5.png" alt="" class=" w-full">
 					<div class="p-3">
 						<p class="text-yellow-500 mr-6 text-sm">Work and Travel <span class=" text-black">16 septembar
 								23</span>
@@ -375,7 +389,7 @@
 						<hr class="mb-2">
 						<div class="flex justify-between">
 							<div class="flex items-center gap-2">
-								<img src="./assets/blog/author_1.png" alt="">
+								<img src="./assets/blog/author_2.png" alt="">
 								<p>Ys Stafen</p>
 							</div>
 							<button class="text-orange-400 hover:text-orange-500">Read More >> </button>
@@ -384,7 +398,7 @@
 				</div>
 				<!-- 3rd card -->
 				<div class="shadow-xl hover:shadow-2xl rounded-md">
-					<img src="./assets/Thumbnail/thumbnail_4.png" alt="" class="max-w-[360px] hover:cursor-pointer">
+					<img src="./assets/Thumbnail/thumbnail_6.png" alt="" class="hover:cursor-pointer w-full">
 					<div class="p-3">
 						<p class="text-yellow-500 mr-6 text-sm">Work and Travel <span class=" text-black">16 septembar
 								23</span>
@@ -395,7 +409,7 @@
 						<hr class="mb-2">
 						<div class="flex justify-between">
 							<div class="flex items-center gap-2">
-								<img src="./assets/blog/author_1.png" alt="">
+								<img src="./assets/blog/author_3.png" alt="">
 								<p>Ys Stafen</p>
 							</div>
 							<button class="text-orange-400 hover:text-orange-500">Read More >> </button>
@@ -407,17 +421,18 @@
 	</section>
 
 	<!-- Newsletter section -->
-	<section class="max-w-[1120px] mx-auto">
-		<div>
-			<div class="grid grid-cols-1 md:grid-cols-2 content-center items-center">
+	<section class="max-w-[1120px] mx-auto my-20 ">
+		<div class="p-5 xl:p-0 ">
+			<div class="flex flex-col md:grid md:grid-cols-2 justify-between items-center">
 				<div class="">
 					<img src="./assets/News_letter/news_letter.png" alt="" class="">
 				</div>
-				<div class="">
+				<div class="mt-3 md:mt-0">
 					<h3 class="text-[40px] font-bold mb-2 leading-10">Subscribe to our <br> Newsletter!</h3>
 					<p class="text-xl font-medium text-blue-400">Subscribe to our newsletter and stay <br> updated.</p>
 					<input type="email" name="" id=""
-						class="p-2 my-5 border border-blue-500 rounded-xl placeholder:text-blue-500" placeholder="Your Email">
+						class="p-2 my-5 border border-blue-500 rounded-xl placeholder:text-blue-500 w-full"
+						placeholder="Your Email">
 					<button class="w-full py-2 bg-orange-400 hover:bg-orange-500  rounded-xl">Subscribe</button>
 				</div>
 			</div>
@@ -428,91 +443,78 @@
 	<footer>
 		<div class="mt-20 bg-blue-500">
 			<div class="px-4 pt-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-				<div class="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
-					<div class="md:max-w-md lg:col-span-2">
+				<div class="grid grid-cols-2 gap-16 row-gap-10 mb-8 lg:grid-cols-4">
+					<!-- Address -->
+					<div>
 						<a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
-							<span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">Address</span>
+							<span class="font-semibold tracking-wide text-gray-100 uppercase">Address</span>
 						</a>
 						<div class="mt-4 lg:max-w-sm">
-							<p class="text-sm text-deep-purple-50">
-								Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-								laudantium,
-								totam rem aperiam.
+							<p class=" text-white">
+								House- 75 Ka, Main Rd, <br> Dhaka 1216
 							</p>
-							<p class="mt-4 text-sm text-deep-purple-50">
-								Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-								explicabo.
-							</p>
+							<a href="" class="mt-5 text-white">
+								<i class="fa-solid fa-location-dot"></i> View on Maps.
+							</a>
 						</div>
 					</div>
-					<div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
-						<div>
-							<p class="font-semibold tracking-wide text-teal-accent-400">
-								About Us
-							</p>
-							<ul class="mt-2 space-y-2">
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Storied</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Blog</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Airlines</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Testimli</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<p class="font-semibold tracking-wide text-teal-accent-400">Join Us</p>
-							<ul class="mt-2 space-y-2">
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Terms
-										of Service</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Privacy
-										Policy</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Support</a>
-								</li>
-							</ul>
-						</div>
-						<div>
-							<p class="font-semibold tracking-wide text-teal-accent-400">Contact</p>
-							<ul class="mt-2 space-y-2">
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">+8801234562890</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">+8801234562890</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">+8801234562890</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Info@Airhook.Com</a>
-								</li>
-								<li>
-									<a href="/"
-										class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Projects</a>
-								</li>
-							</ul>
-						</div>
+					<!-- about us -->
+					<div>
+						<p class="font-semibold tracking-wide text-white">About Us </p>
+						<ul class="mt-2 space-y-2">
+							<li>
+								<a href="/" class="transition-colors duration-300 text-white hover:text-gray-200">Storied</a>
+							</li>
+							<li>
+								<a href="/" class="transition-colors duration-300 text-white hover:text-gray-200">Blog</a>
+							</li>
+							<li>
+								<a href="/" class="transition-colors duration-300 text-white hover:text-gray-200">Airlines</a>
+							</li>
+							<li>
+								<a href="/"
+									class="transition-colors duration-300 text-white hover:text-gray-200">Testimonial</a>
+							</li>
+						</ul>
+					</div>
+					<!-- join us -->
+					<div>
+						<p class="font-semibold tracking-wide text-white">Join Us</p>
+						<ul class="mt-2 space-y-2">
+							<li>
+								<a href="/" class="transition-colors duration-300 text-white hover:text-gray-200">Terms
+									of Service</a>
+							</li>
+							<li>
+								<a href="/" class="transition-colors duration-300 text-white hover:text-gray-200">Privacy
+									Policy</a>
+							</li>
+							<li>
+								<a href="/" class="transition-colors duration-300 text-white hover:text-gray-200">Support</a>
+							</li>
+						</ul>
+					</div>
+					<!-- contact -->
+					<div>
+						<p class="font-semibold tracking-wide text-white">Contact</p>
+						<ul class="mt-2 space-y-2">
+							<li>
+								<a href="/"
+									class="transition-colors duration-300 text-white hover:text-gray-200">+8801234562890</a>
+							</li>
+							<li>
+								<a href="/"
+									class="transition-colors duration-300 text-white hover:text-gray-200">+8801234562890</a>
+							</li>
+							<li>
+								<a href="/"
+									class="transition-colors duration-300 text-white hover:text-gray-200">+8801234562890</a>
+							</li>
+							<li>
+								<a href="/"
+									class="transition-colors duration-300 text-white hover:text-gray-200">Info@Airhook.Com</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<!-- Copyright -->
@@ -521,17 +523,17 @@
 					<div>
 						<img src="./assets/Logo/LOGO_white.png" alt="">
 					</div>
-					<p class="text-sm text-gray-100">
+					<p class="text-sm text-gray-100 mt-2 md:mt-0">
 						© Copyright AIRBOOK.
 					</p>
 					<div class="flex items-center mt-4 gap-10 sm:mt-0">
-						<a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
+						<a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-gray-200">
 							<img src="./assets/Social_Icon/youtube.png" alt="" class="h-6 w-8">
 						</a>
-						<a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
+						<a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-gray-200">
 							<img src="./assets/Social_Icon/facebook.png" alt="" class="h-6 w-5">
 						</a>
-						<a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
+						<a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-gray-200">
 							<img src="./assets/Social_Icon/linkedin.png" alt="" class="h-6 w-8">
 						</a>
 					</div>
